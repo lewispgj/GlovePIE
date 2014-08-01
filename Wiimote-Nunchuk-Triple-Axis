@@ -1,0 +1,199 @@
+// PPJoy1-Nunchuk / PPJoy2-Nunchuk / PPJoy3-Nunchuk / PPJoy4-Nunchuk
+
+//Joy 1
+
+Wiimote1.Led1 = true
+Wiimote1.Led2 = false
+Wiimote1.Led3 = false
+Wiimote1.Led4 = false
+
+
+//PPJoy1.Analog2 = -((Wiimote1.RawForceX + 6) / 40)  -Buggy
+//PPJoy1.Analog3 = ((Wiimote1.RawForceZ – 3) / 40)   -Buggy
+
+ PPJoy1.Digital8 = Wiimote1.Home
+ PPJoy1.Digital9 = Wiimote1.One
+ PPJoy1.Digital10 = Wiimote1.Two
+ //PPJoy1.DigitalXX = Wiimote1.Nunchuk.CButton -Should not exist, since it is used as a variable trigger
+ //PPJoy1.DigitalXX = Wiimote1.Nunchuk.ZButton
+
+if Wiimote1.Nunchuk.CButton = true
+   PPJoy1.Digital12 = Wiimote1.A
+   PPJoy1.Digital13 = Wiimote1.Up
+   PPJoy1.Digital14 = Wiimote1.Down
+   PPJoy1.Digital15 = Wiimote1.Left
+   PPJoy1.Digital16 = Wiimote1.Right
+   PPJoy1.Digital17 = Wiimote1.Minus
+   PPJoy1.Digital18 = Wiimote1.Plus
+   PPJoy1.Digital19 = Wiimote1.B
+   PPJoy1.Analog2 = (Wiimote1.Nunchuk.JoyX * 1)
+   PPJoy1.Analog5 = (Wiimote1.Nunchuk.JoyY * 1)
+else 
+
+   // ^&*
+
+   PPJoy1.Digital4 = Wiimote1.A
+   PPJoy1.Digital5 = Wiimote1.B
+   PPJoy1.Digital6 = Wiimote1.Minus
+   PPJoy1.Digital7 = Wiimote1.Plus
+endif
+
+if Wiimote1.Nunchuk.ZButton = true
+   PPJoy1.Digital24 = Wiimote1.Nunchuk.Left
+   PPJoy1.Digital25 = Wiimote1.Nunchuk.Up
+   PPJoy1.Digital26 = Wiimote1.Nunchuk.Right
+   PPJoy1.Digital27 = Wiimote1.Nunchuk.Down
+   PPJoy1.Digital20 = Wiimote1.Left
+   PPJoy1.Digital21 = Wiimote1.Right
+   PPJoy1.Digital22 = Wiimote1.Up
+   PPJoy1.Digital23 = Wiimote1.Down
+else
+endif
+
+
+
+if Wiimote1.Nunchuk.ZButton = false && Wiimote1.Nunchuk.CButton = false
+   PPJoy1.Analog0 = (Wiimote1.Nunchuk.JoyX * 1) //Change by 0.1 increments to alter speed
+   PPJoy1.Analog1 = (Wiimote1.Nunchuk.JoyY * 1) //Change by 0.1 increments to alter speed
+
+   //moved 17apr2014 from ^&*
+   PPJoy1.Digital0 = Wiimote1.Up
+   PPJoy1.Digital1 = Wiimote1.Down
+   PPJoy1.Digital2 = Wiimote1.Left
+   PPJoy1.Digital3 = Wiimote1.Right
+endif
+
+//Joy 2
+
+Wiimote2.Led1 = false
+Wiimote2.Led2 = true
+Wiimote2.Led3 = false
+Wiimote2.Led4 = false
+
+
+//PPJoy2.Analog2 = -((Wiimote2.RawForceX + 6) / 40)  -Buggy
+//PPJoy2.Analog3 = ((Wiimote2.RawForceZ – 3) / 40)   -Buggy
+
+ PPJoy2.Digital8 = Wiimote2.Home
+ PPJoy2.Digital9 = Wiimote2.One
+ PPJoy2.Digital10 = Wiimote2.Two
+ //PPJoy2.DigitalXX = Wiimote2.Nunchuk.CButton -Should not exist, since it is used as a variable trigger
+ //PPJoy2.DigitalXX = Wiimote2.Nunchuk.ZButton
+
+if Wiimote2.Nunchuk.CButton = true
+   PPJoy2.Digital12 = Wiimote2.A
+   PPJoy2.Digital13 = Wiimote2.Up
+   PPJoy2.Digital14 = Wiimote2.Down
+   PPJoy2.Digital15 = Wiimote2.Left
+   PPJoy2.Digital16 = Wiimote2.Right
+   PPJoy2.Digital17 = Wiimote2.Minus
+   PPJoy2.Digital18 = Wiimote2.Plus
+   PPJoy2.Digital19 = Wiimote2.B
+else 
+   PPJoy2.Digital0 = Wiimote2.Up
+   PPJoy2.Digital1 = Wiimote2.Down
+   PPJoy2.Digital2 = Wiimote2.Left
+   PPJoy2.Digital3 = Wiimote2.Right
+   PPJoy2.Digital4 = Wiimote2.A
+   PPJoy2.Digital5 = Wiimote2.B
+   PPJoy2.Digital6 = Wiimote2.Minus
+   PPJoy2.Digital7 = Wiimote2.Plus
+endif
+
+if Wiimote2.Nunchuk.ZButton = true
+   PPJoy2.Analog2 = (Wiimote2.Nunchuk.JoyX * 1)
+   PPJoy2.Analog5 = (Wiimote2.Nunchuk.JoyY * 1)
+else
+   PPJoy2.Analog0 = (Wiimote2.Nunchuk.JoyX * 1) //Change by 0.1 increments to alter speed
+   PPJoy2.Analog1 = (Wiimote2.Nunchuk.JoyY * 1) //Change by 0.1 increments to alter speed
+endif
+
+//Joy 3
+
+Wiimote3.Led1 = false
+Wiimote3.Led2 = false
+Wiimote3.Led3 = true
+Wiimote3.Led4 = false
+
+//PPJoy3.Analog2 = -((Wiimote3.RawForceX + 6) / 40)  -Buggy
+//PPJoy3.Analog3 = ((Wiimote3.RawForceZ – 3) / 40)   -Buggy
+
+ PPJoy3.Digital8 = Wiimote3.Home
+ PPJoy3.Digital9 = Wiimote3.One
+ PPJoy3.Digital10 = Wiimote3.Two
+ //PPJoy3.DigitalXX = Wiimote3.Nunchuk.CButton -Should not exist, since it is used as a variable trigger
+ //PPJoy3.DigitalXX = Wiimote3.Nunchuk.ZButton
+
+if Wiimote3.Nunchuk.CButton = true
+   PPJoy3.Digital12 = Wiimote3.A
+   PPJoy3.Digital13 = Wiimote3.Up
+   PPJoy3.Digital14 = Wiimote3.Down
+   PPJoy3.Digital15 = Wiimote3.Left
+   PPJoy3.Digital16 = Wiimote3.Right
+   PPJoy3.Digital17 = Wiimote3.Minus
+   PPJoy3.Digital18 = Wiimote3.Plus
+   PPJoy3.Digital19 = Wiimote3.B
+else 
+   PPJoy3.Digital0 = Wiimote3.Up
+   PPJoy3.Digital1 = Wiimote3.Down
+   PPJoy3.Digital2 = Wiimote3.Left
+   PPJoy3.Digital3 = Wiimote3.Right
+   PPJoy3.Digital4 = Wiimote3.A
+   PPJoy3.Digital5 = Wiimote3.B
+   PPJoy3.Digital6 = Wiimote3.Minus
+   PPJoy3.Digital7 = Wiimote3.Plus
+endif
+
+if Wiimote3.Nunchuk.ZButton = true
+   PPJoy3.Analog2 = Wiimote3.Nunchuk.JoyX
+   PPJoy3.Analog5 = Wiimote3.Nunchuk.JoyY
+else
+   PPJoy3.Analog0 = (Wiimote3.Nunchuk.JoyX * 1) //Change by 0.1 increments to alter speed
+   PPJoy3.Analog1 = (Wiimote3.Nunchuk.JoyY * 1) //Change by 0.1 increments to alter speed
+endif
+
+//Joy 4
+
+Wiimote4.Led1 = false
+Wiimote4.Led2 = false
+Wiimote4.Led3 = false
+Wiimote4.Led4 = true
+
+
+//PPJoy4.Analog2 = -((Wiimote4.RawForceX + 6) / 40)  -Buggy
+//PPJoy4.Analog3 = ((Wiimote4.RawForceZ – 3) / 40)   -Buggy
+
+ PPJoy4.Digital8 = Wiimote4.Home
+ PPJoy4.Digital9 = Wiimote4.One
+ PPJoy4.Digital10 = Wiimote4.Two
+ //PPJoy4.DigitalXX = Wiimote4.Nunchuk.CButton -Should not exist, since it is used as a variable trigger
+ //PPJoy4.DigitalXX = Wiimote4.Nunchuk.ZButton
+
+if Wiimote4.Nunchuk.CButton = true
+   PPJoy4.Digital12 = Wiimote4.A
+   PPJoy4.Digital13 = Wiimote4.Up
+   PPJoy4.Digital14 = Wiimote4.Down
+   PPJoy4.Digital15 = Wiimote4.Left
+   PPJoy4.Digital16 = Wiimote4.Right
+   PPJoy4.Digital17 = Wiimote4.Minus
+   PPJoy4.Digital18 = Wiimote4.Plus
+   PPJoy4.Digital19 = Wiimote4.B
+else 
+   PPJoy4.Digital0 = Wiimote4.Up
+   PPJoy4.Digital1 = Wiimote4.Down
+   PPJoy4.Digital2 = Wiimote4.Left
+   PPJoy4.Digital3 = Wiimote4.Right
+   PPJoy4.Digital4 = Wiimote4.A
+   PPJoy4.Digital5 = Wiimote4.B
+   PPJoy4.Digital6 = Wiimote4.Minus
+   PPJoy4.Digital7 = Wiimote4.Plus
+endif
+
+if Wiimote4.Nunchuk.ZButton = true
+   PPJoy4.Analog2 = Wiimote4.Nunchuk.JoyX
+   PPJoy4.Analog5 = Wiimote4.Nunchuk.JoyY
+else
+   PPJoy4.Analog0 = (Wiimote4.Nunchuk.JoyX * 1) //Change by 0.1 increments to alter speed
+   PPJoy4.Analog1 = (Wiimote4.Nunchuk.JoyY * 1) //Change by 0.1 increments to alter speed
+endif
+
